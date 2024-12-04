@@ -28,7 +28,7 @@ So, for these example lists, the similarity score at the end of this process is 
 
 Once again consider your left and right lists. What is their similarity score?
 """
-from q1_partone import open_file 
+from day1_part_1 import open_file 
 
 def find_simlarity_score(l1, l2):
     #brute force O(n^2)

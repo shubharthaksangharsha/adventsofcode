@@ -70,7 +70,6 @@ def f(l1: List[int], l2: List[int]):
 
 if __name__ == '__main__':
     l1, l2 = open_file('inputs/input.txt')
-    
     print(f(l1, l2))
     
     
