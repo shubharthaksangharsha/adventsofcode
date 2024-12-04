@@ -52,7 +52,7 @@ def open_file(filename):
     return l1, l2 
 
 def f(l1: List[int], l2: List[int]): 
-    # res = [] #ans: 1660292
+    # res = [] 
     #Brute force - O(n^2)
     # while l1 != [] and l2 != []: 
     #     n1, n2 = min(l1), min(l2)
