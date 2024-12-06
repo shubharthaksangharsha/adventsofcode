@@ -21,24 +21,18 @@ Update your analysis by handling situations where the Problem Dampener can remov
 from day2_part_1 import two_d_file_input , stricly_decrease, strictly_increase, check_adj
 from typing import List 
 
-def damper(safe_count: int, level: List[int]):
-    temp = level.copy() 
+def damper(level: List[int]):
     for i in range(len(level)):
-        temp = level.copy() 
-        temp.remove(temp[i])
+        temp = level[:i] + level[i+1:] 
         if check_safe(temp):
-            safe_count += 1 
-            break 
-        continue 
-    return safe_count
+            return True 
+    return False 
 
 def solve(reports):
     safe_reports = 0
     for level in reports: 
-        if check_safe(level):
+        if check_safe(level) or damper(level):
             safe_reports += 1 
-            continue
-        safe_reports = damper(safe_reports, level)
     return safe_reports 
 
 def check_safe(level):
@@ -47,6 +41,5 @@ def check_safe(level):
     return False 
 
 if __name__ == '__main__':
-    # reports = two_d_file_input('inputs/input2.txt')
-    reports = two_d_file_input('inputs/test.txt')
+    reports = two_d_file_input('inputs/input2.txt')
     print(solve(reports))
